@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atletik Challenge — PJOK Kelas X</title>
+<style>
+:root{--navy:#152744;--blue:#2855d9;--cyan:#40d9d0;--bg:#f3f6fc;--ink:#17243b;--muted:#65738b;--white:#fff;--green:#16845b;--red:#c83d52}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,#e8efff,#f7fbff 55%,#e5fbf7);color:var(--ink);min-height:100vh}
+.wrap{max-width:900px;margin:auto;padding:24px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{font-weight:900;letter-spacing:.4px;color:var(--navy)}.pill{background:#dff8f4;color:#087c78;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800}
+.hero{background:linear-gradient(125deg,#152744,#2855d9);color:white;border-radius:26px;padding:30px;position:relative;overflow:hidden;box-shadow:0 18px 45px #1c3a7224}.hero:after{content:"🏃‍♀️";position:absolute;font-size:115px;right:28px;bottom:8px;opacity:.17;transform:rotate(-12deg)}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:900;color:#82f3e7}.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:12px 0}.hero p{max-width:570px;color:#e1eaff;line-height:1.6;margin-bottom:0}.topics{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.topic{background:#ffffff1c;border:1px solid #ffffff36;border-radius:12px;padding:9px 12px;font-size:13px;font-weight:750}
+.panel{background:white;border:1px solid #e4eaf4;border-radius:22px;padding:24px;margin-top:18px;box-shadow:0 10px 30px #243d6810}.panel h2{margin:0 0 8px;font-size:22px}.muted{color:var(--muted);font-size:14px;line-height:1.55}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}.field input{width:100%;padding:13px 14px;border:1px solid #d6dfed;border-radius:12px;font-size:15px;outline:none}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2855d91b}
+.btn{border:0;border-radius:13px;padding:13px 18px;font-weight:850;font-size:14px;cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--cyan);color:#103b51}.secondary{background:#edf2ff;color:#2446ad}.dark{background:var(--navy);color:white}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.rule{background:#f5f8ff;border-radius:14px;padding:14px}.rule strong{display:block;font-size:14px;margin-bottom:5px}.rule span{font-size:12px;color:var(--muted);line-height:1.4}
+.hidden{display:none!important}.quizhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}.progressbox{height:8px;background:#edf1f8;border-radius:99px;overflow:hidden;margin:12px 0 22px}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .25s}.qmeta{font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:1px}.qtext{font-size:clamp(19px,3vw,25px);font-weight:850;line-height:1.35;margin:12px 0 20px}.answers{display:grid;gap:10px}.answer{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:white;border:1.5px solid #dfe6f1;border-radius:14px;padding:15px;cursor:pointer;color:var(--ink);font-size:15px;line-height:1.45}.answer .letter{flex:0 0 28px;height:28px;display:grid;place-items:center;background:#eef2fa;border-radius:8px;font-weight:900;color:#52627e}.answer:hover{border-color:#8da6f5;background:#f8faff}.answer.selected{border-color:var(--blue);background:#edf2ff}.answer.correct{border-color:var(--green);background:#eaf8f1}.answer.wrong{border-color:var(--red);background:#fff0f2}.answer.correct .letter{background:var(--green);color:white}.answer.wrong .letter{background:var(--red);color:white}.explain{padding:13px 15px;border-radius:12px;background:#f1f8f5;color:#245c48;margin-top:14px;font-size:14px;line-height:1.5}.quizfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px}.scorebig{font-size:56px;font-weight:950;letter-spacing:-2px;color:var(--blue)}.resulttop{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.resultbadge{padding:9px 12px;border-radius:999px;background:#e6f8ef;color:#13754f;font-weight:900;font-size:13px}.review{border:1px solid #e3e9f3;border-radius:13px;padding:14px;margin-top:10px}.review h4{margin:0 0 7px;font-size:15px}.review p{margin:4px 0;color:var(--muted);font-size:13px;line-height:1.5}.review .good{color:var(--green);font-weight:800}.review .bad{color:var(--red);font-weight:800}.footnote{text-align:center;color:#7c89a0;font-size:12px;margin-top:20px}
+@media(max-width:600px){.hero{padding:24px}.hero:after{right:10px;font-size:75px}.formgrid{grid-template-columns:1fr}.rules{grid-template-columns:1fr}.panel{padding:18px}.quizfoot{align-items:stretch}.quizfoot .btn{flex:1}.top{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="brand">⚡ PJOK DIGITAL CLASS</div><div class="pill">KELAS X SMK · ATLETIK</div></div>
+  <section class="hero">
+    <div class="eyebrow">Skill • Strategy • Sportivitas</div>
+    <h1>ATLETIK<br>CHALLENGE</h1>
+    <p>Uji pemahamanmu tentang nomor lari, lompat, dan lempar. Jawab soal dengan teliti, raih skor terbaik, dan tunjukkan sportivitas!</p>
+    <div class="topics"><div class="topic">🏃 Nomor Lari</div><div class="topic">🦘 Nomor Lompat</div><div class="topic">🥏 Nomor Lempar</div></div>
+  </section>
+  <section id="start" class="panel">
+    <h2>Siap memulai tantangan?</h2>
+    <p class="muted">Setiap permainan berisi <b>15 soal pilihan ganda yang diacak</b> dari kumpulan soal. Setiap jawaban benar bernilai sama. Kerjakan secara mandiri.</p>
+    <div class="formgrid">
+      <div class="field"><label for="student">Nama siswa</label><input id="student" placeholder="Masukkan nama lengkap" autocomplete="name"></div>
+      <div class="field"><label for="className">Kelas</label><input id="className" placeholder="Contoh: X DPB 1"></div>
+    </div>
+    <div class="rules">
+      <div class="rule"><strong>🎯 15 soal</strong><span>Urutan soal dan pilihan jawaban diacak.</span></div>
+      <div class="rule"><strong>📊 Skor otomatis</strong><span>Nilai akhir dihitung dari jawaban benar.</span></div>
+      <div class="rule"><strong>💡 Umpan balik</strong><span>Lihat pembahasan setelah menjawab.</span></div>
+    </div>
+    <button class="btn primary" onclick="startGame()">Mulai Permainan →</button>
+    <p class="muted" style="margin-top:14px;font-size:12px">Catatan: hasil ditampilkan pada perangkat yang digunakan dan tidak otomatis dikirim ke guru.</p>
+  </section>
+  <section id="quiz" class="panel hidden">
+    <div class="quizhead"><div><div class="qmeta" id="studentLabel">Peserta</div><strong id="classLabel"></strong></div><div class="pill" id="counter">SOAL 1 / 15</div></div>
+    <div class="progressbox"><div id="progress" class="progress"></div></div>
+    <div class="qmeta" id="category">NOMOR LARI</div>
+    <div id="question" class="qtext"></div>
+    <div id="answers" class="answers"></div>
+    <div id="explain" class="explain hidden"></div>
+    <div class="quizfoot"><button class="btn secondary" id="quitBtn" onclick="quitGame()">Akhiri</button><button class="btn dark" id="nextBtn" onclick="nextQuestion()" disabled>Jawaban berikutnya →</button></div>
+  </section>
+  <section id="result" class="panel hidden">
+    <div class="eyebrow" style="color:#2855d9">TANTANGAN SELESAI</div>
+    <h2 id="resultTitle">Hasil Permainan</h2>
+    <div class="resulttop"><div class="scorebig" id="score">0</div><div><div class="resultbadge" id="badge">Terus berlatih!</div><p class="muted" id="resultText"></p></div></div>
+    <div class="rules">
+      <div class="rule"><strong id="correctCount">0</strong><span>Jawaban benar</span></div>
+      <div class="rule"><strong id="wrongCount">0</strong><span>Jawaban belum tepat</span></div>
+      <div class="rule"><strong>15</strong><span>Total soal</span></div>
+    </div>
+    <button class="btn primary" id="sendScoreBtn" onclick="sendScoreToTeacher()">📨 Kirim Nilai ke Guru</button>
+    <p id="sendStatus" class="muted" role="status" aria-live="polite" style="margin-top:10px"></p>
+    <button class="btn secondary" onclick="showReview()">Lihat pembahasan semua soal</button>
+    <button class="btn secondary" onclick="restartGame()">Main lagi dengan soal acak</button>
+    <div id="review" class="hidden" style="margin-top:18px"><h2>Review Jawaban</h2><div id="reviewList"></div></div>
+    <p class="muted" style="margin-top:18px">Tekan “Kirim Nilai ke Guru” untuk mengirim nama, kelas, dan hasil kuis ke Google Sheets. Setelah mengirim, periksa konfirmasi pada spreadsheet bersama guru.</p>
+  </section>
+  <div class="footnote">BELAJAR AKTIF · JUJUR · SPORTIF · SELAMAT MENCOBA!</div>
+</div>
+<script>
+const SCORE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzDsiOZhEpBjsGJeLZQDKZcPZVR_jx-v57wCI92OmxGYa-Z0MVCXoaB2DrOzBDTc-WA8g/exec';
+let scoreSubmitted = false;
+const bank = [
+{c:"Nomor Lari",q:"Pada perlombaan lari jarak pendek, teknik start yang umumnya digunakan adalah …",a:["Start berdiri","Start jongkok","Start melayang","Start menyamping"],k:1,e:"Lari jarak pendek biasanya menggunakan start jongkok untuk membantu akselerasi awal."},
+{c:"Nomor Lari",q:"Nomor berikut yang termasuk lari jarak pendek adalah …",a:["100 meter","1.500 meter","5.000 meter","Maraton"],k:0,e:"Nomor 100 meter merupakan nomor sprint atau lari jarak pendek."},
+{c:"Nomor Lari",q:"Dalam lari estafet, benda yang diberikan kepada pelari berikutnya disebut …",a:["Bendera","Tongkat estafet","Peluit","Pita garis"],k:1,e:"Tongkat estafet harus diserahkan kepada pelari berikutnya sesuai zona pergantian."},
+{c:"Nomor Lari",q:"Hal paling penting saat menerima tongkat estafet adalah …",a:["Berhenti total sebelum menerima","Menjaga koordinasi dan pergantian di zona yang ditentukan","Melempar tongkat kepada teman","Berlari keluar lintasan"],k:1,e:"Koordinasi, komunikasi, dan pergantian di zona yang ditentukan membantu menjaga kecepatan serta menghindari pelanggaran."},
+{c:"Nomor Lari",q:"Pada lari jarak menengah, pelari perlu mengatur …",a:["Kecepatan dan daya tahan","Lompatan setinggi mungkin","Jarak lemparan","Gerakan tangan seperti berenang"],k:0,e:"Pengaturan tempo dan daya tahan penting agar tenaga cukup sampai garis finis."},
+{c:"Nomor Lari",q:"Ketika mendekati garis finis, pelari sebaiknya …",a:["Mengurangi kecepatan jauh sebelum garis","Berhenti tepat di depan garis","Tetap berlari maksimal hingga melewati garis finis","Melihat ke belakang berulang kali"],k:2,e:"Pelari mempertahankan usaha sampai melewati garis finis dan menghindari perlambatan terlalu awal."},
+{c:"Nomor Lari",q:"Fungsi ayunan lengan ketika berlari adalah …",a:["Membantu keseimbangan dan irama gerak","Menghentikan gerak kaki","Membuat tubuh selalu tegak kaku","Mengurangi kebutuhan koordinasi"],k:0,e:"Ayunan lengan yang terkoordinasi membantu keseimbangan, irama, dan efisiensi lari."},
+{c:"Nomor Lari",q:"Sikap yang tepat ketika mendengar aba-aba start adalah …",a:["Mengobrol dengan peserta lain","Memperhatikan aba-aba dan bersiap sesuai posisi start","Langsung berlari sebelum aba-aba","Berpindah ke lintasan lain"],k:1,e:"Pelari harus fokus pada aba-aba dan memulai setelah sinyal start yang sah."},
+{c:"Nomor Lompat",q:"Tujuan utama awalan dalam lompat jauh adalah …",a:["Mendapatkan kecepatan yang terkendali sebelum menolak","Mengurangi kecepatan sebanyak mungkin","Menghindari papan tolakan","Mendarat sebelum melompat"],k:0,e:"Awalan membantu menghasilkan kecepatan horizontal yang mendukung lompatan."},
+{c:"Nomor Lompat",q:"Dalam lompat jauh, tolakan dilakukan menggunakan …",a:["Kedua tangan","Satu kaki pada papan tolakan","Kedua lutut","Punggung"],k:1,e:"Tolakan lompat jauh dilakukan dengan satu kaki pada papan tolakan."},
+{c:"Nomor Lompat",q:"Pendaratan yang baik pada lompat jauh dilakukan dengan …",a:["Kaki dijulurkan ke depan dan lutut ditekuk saat mendarat","Mendarat dengan satu tangan terlebih dahulu","Mendarat dengan kaki kaku lurus","Membelakangi arah lompatan"],k:0,e:"Kaki dijulurkan ke depan, lalu lutut ditekuk untuk membantu menyerap benturan."},
+{c:"Nomor Lompat",q:"Pada lompat tinggi, tujuan atlet adalah …",a:["Melompati mistar tanpa menjatuhkannya","Melempar mistar sejauh mungkin","Mendarat di luar matras","Melompati garis finis"],k:0,e:"Lompat tinggi bertujuan melewati mistar pada ketinggian tertentu tanpa menjatuhkannya."},
+{c:"Nomor Lompat",q:"Area pendaratan lompat tinggi seharusnya …",a:["Berupa permukaan keras","Menggunakan matras yang sesuai dan aman","Berada di lantai licin","Dipenuhi benda penghalang"],k:1,e:"Matras yang sesuai dan area bebas penghalang penting untuk mengurangi risiko cedera."},
+{c:"Nomor Lompat",q:"Urutan umum gerak lompat jauh adalah …",a:["Mendarat–awalan–tolakan–melayang","Awalan–tolakan–melayang–mendarat","Tolakan–mendarat–awalan–melayang","Melayang–awalan–mendarat–tolakan"],k:1,e:"Gerak lompat jauh terdiri dari awalan, tolakan, melayang, dan pendaratan."},
+{c:"Nomor Lompat",q:"Mengapa pemanasan perlu dilakukan sebelum latihan lompat?",a:["Agar tidak perlu mengikuti instruksi","Untuk mempersiapkan tubuh dan membantu mengurangi risiko cedera","Agar matras menjadi lebih keras","Supaya latihan bisa langsung maksimal tanpa persiapan"],k:1,e:"Pemanasan mempersiapkan otot dan sendi serta membantu tubuh beradaptasi sebelum aktivitas intensif."},
+{c:"Nomor Lempar",q:"Dalam tolak peluru, peluru didorong dari dekat …",a:["Pinggang","Bahu atau leher","Lutut","Pergelangan kaki"],k:1,e:"Peluru ditempatkan dekat leher atau bahu lalu ditolak, bukan dilempar seperti bola."},
+{c:"Nomor Lempar",q:"Perbedaan utama tolak peluru dengan lempar lembing adalah …",a:["Peluru ditolak, sedangkan lembing dilempar","Keduanya selalu ditendang","Lembing digelindingkan di tanah","Peluru dipukul dengan raket"],k:0,e:"Tolak peluru menggunakan gerak dorong dari bahu, sedangkan lembing dilempar ke depan."},
+{c:"Nomor Lempar",q:"Alat yang digunakan dalam lempar cakram berbentuk …",a:["Tongkat panjang","Cakram berbentuk piringan","Bola kecil berbulu","Mistar melengkung"],k:1,e:"Cakram adalah alat berbentuk piringan yang dilempar dalam nomor lempar cakram."},
+{c:"Nomor Lempar",q:"Sebelum melakukan lempar lembing, hal yang harus dipastikan adalah …",a:["Area lempar bebas dari orang dan aman","Teman berdiri di depan sasaran","Lembing dilempar ke arah penonton","Semua peserta mengambil alat bersamaan"],k:0,e:"Lembing berbahaya jika area tidak steril. Ikuti instruksi guru dan pastikan semua orang berada di tempat aman."},
+{c:"Nomor Lempar",q:"Dalam lempar lembing, lembing sebaiknya dilepaskan ke arah …",a:["Belakang pel lempar","Sektor lempar yang telah ditentukan","Penonton","Area peserta lain"],k:1,e:"Lemparan harus diarahkan ke sektor yang ditentukan dan hanya dilakukan saat area aman."},
+{c:"Nomor Lempar",q:"Sikap yang benar saat mengambil alat lempar setelah latihan adalah …",a:["Mengambil saat orang lain masih melempar","Menunggu aba-aba guru dan mengambil dengan tertib","Berlari melintasi sektor lempar","Melempar alat kembali sembarangan"],k:1,e:"Alat diambil setelah ada instruksi dan semua lemparan berhenti agar kegiatan tetap aman."},
+{c:"Nomor Lempar",q:"Faktor yang membantu menghasilkan lemparan yang baik adalah …",a:["Koordinasi gerak, keseimbangan, dan arah lemparan","Memejamkan mata","Mengabaikan teknik","Berdiri di area yang tidak aman"],k:0,e:"Teknik, koordinasi, keseimbangan, dan arah gerak memengaruhi hasil lemparan."},
+{c:"Keselamatan Atletik",q:"Saat teman sedang melakukan lemparan, peserta lain harus …",a:["Berdiri di sektor lempar","Menunggu di tempat aman di luar area lempar","Berlari mengambil alat","Berjalan di depan pelempar"],k:1,e:"Semua peserta harus berada di area aman dan tidak melintasi sektor lempar ketika kegiatan berlangsung."},
+{c:"Keselamatan Atletik",q:"Jika merasa pusing atau nyeri saat latihan atletik, tindakan tepat adalah …",a:["Memaksakan diri agar terlihat kuat","Berhenti, memberi tahu guru, dan mengikuti arahan","Diam saja lalu lanjut berlari","Menyembunyikannya dari guru"],k:1,e:"Hentikan aktivitas dan sampaikan kondisi kepada guru agar mendapat penanganan yang tepat."},
+{c:"Keselamatan Atletik",q:"Sikap sportivitas dalam perlombaan atletik ditunjukkan dengan …",a:["Menghormati aturan, lawan, dan keputusan wasit","Mengejek peserta yang kalah","Mengubah hasil pengukuran","Mengganggu peserta lain"],k:0,e:"Sportivitas berarti jujur, mematuhi aturan, dan menghargai semua peserta."}
+];
+let questions=[], index=0, selected=null, answers=[], studentName="", className="";
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startGame(){
+ studentName=document.getElementById('student').value.trim();
+ className=document.getElementById('className').value.trim();
+ if(!studentName){document.getElementById('student').focus();alert('Silakan isi nama siswa terlebih dahulu.');return}
+ if(!className){document.getElementById('className').focus();alert('Silakan isi kelas terlebih dahulu.');return}
+ questions=shuffle(bank).slice(0,15).map(q=>{let opts=q.a.map((t,i)=>({t,correct:i===q.k}));opts=shuffle(opts);return {...q,a:opts.map(o=>o.t),k:opts.findIndex(o=>o.correct)}});
+ index=0;selected=null;answers=[];document.getElementById('start').classList.add('hidden');document.getElementById('result').classList.add('hidden');document.getElementById('quiz').classList.remove('hidden');document.getElementById('studentLabel').textContent=studentName;document.getElementById('classLabel').textContent=className;renderQuestion();
+}
+function renderQuestion(){
+ selected=null;let q=questions[index];document.getElementById('counter').textContent=`SOAL ${index+1} / 15`;document.getElementById('progress').style.width=`${index/15*100}%`;document.getElementById('category').textContent=q.c.toUpperCase();document.getElementById('question').textContent=q.q;document.getElementById('explain').classList.add('hidden');document.getElementById('nextBtn').disabled=true;document.getElementById('nextBtn').textContent=index===14?'Lihat hasil akhir →':'Jawaban berikutnya →';
+ let letters=['A','B','C','D'];let wrap=document.getElementById('answers');wrap.innerHTML='';
+ q.a.forEach((a,i)=>{let b=document.createElement('button');b.className='answer';b.innerHTML=`<span class="letter">${letters[i]}</span><span>${a}</span>`;b.onclick=()=>chooseAnswer(i);wrap.appendChild(b)});
+}
+function chooseAnswer(i){
+ if(selected!==null)return;selected=i;let q=questions[index];answers[index]=i;let buttons=[...document.querySelectorAll('.answer')];buttons.forEach((b,j)=>{b.disabled=true;if(j===q.k)b.classList.add('correct');else if(j===i)b.classList.add('wrong')});
+ let ex=document.getElementById('explain');ex.textContent=(i===q.k?'Benar! ':'Belum tepat. ')+q.e;ex.classList.remove('hidden');document.getElementById('nextBtn').disabled=false;document.getElementById('progress').style.width=`${(index+1)/15*100}%`;
+}
+function nextQuestion(){if(selected===null)return;if(index<14){index++;renderQuestion()}else finishGame()}
+function quitGame(){if(confirm('Akhiri permainan sekarang? Soal yang belum dijawab akan dihitung salah.')){while(answers.length<15)answers.push(-1);finishGame()}}
+function finishGame(){
+ document.getElementById('quiz').classList.add('hidden');document.getElementById('result').classList.remove('hidden');let correct=questions.reduce((n,q,i)=>n+(answers[i]===q.k?1:0),0);let score=Math.round(correct/15*100);document.getElementById('resultTitle').textContent=`Hasil: ${studentName}`;document.getElementById('score').textContent=score;document.getElementById('correctCount').textContent=correct;document.getElementById('wrongCount').textContent=15-correct;let badge=score>=90?'Luar biasa!':score>=75?'Bagus, pertahankan!':score>=60?'Cukup, terus berlatih!':'Ayo pelajari kembali materi!';document.getElementById('badge').textContent=badge;document.getElementById('resultText').textContent=`Kelas ${className} · Nilai dihitung dari ${correct} jawaban benar dari 15 soal.`;document.getElementById('review').classList.add('hidden');document.getElementById('progress').style.width='100%';scoreSubmitted=false;document.getElementById('sendScoreBtn').disabled=false;document.getElementById('sendScoreBtn').textContent='📨 Kirim Nilai ke Guru';document.getElementById('sendStatus').textContent='';
+}
+async function sendScoreToTeacher(){
+ const btn=document.getElementById('sendScoreBtn');
+ const status=document.getElementById('sendStatus');
+ if(scoreSubmitted){status.textContent='Tombol ini sudah digunakan untuk hasil kuis ini. Periksa Google Sheets sebelum mencoba lagi.';return;}
+ const correct=questions.reduce((n,q,i)=>n+(answers[i]===q.k?1:0),0);
+ const payload={nama:studentName,kelas:className,nilai:Math.round(correct/15*100),benar:correct,salah:15-correct,totalSoal:15};
+ btn.disabled=true;btn.textContent='Mengirim…';status.textContent='Mengirim permintaan. Mohon tunggu…';
+ try{
+   await fetch(SCORE_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+   scoreSubmitted=true;btn.textContent='✓ Permintaan Terkirim';status.textContent='Permintaan pengiriman telah dilakukan. Karena browser tidak dapat membaca balasan server, buka Google Sheets dan pastikan baris nilai kamu sudah tercatat. Jika belum ada, periksa kode Apps Script dan izin deployment bersama guru.';
+ }catch(err){
+   btn.disabled=false;btn.textContent='Coba Kirim Lagi';status.textContent='Pengiriman tidak dapat dimulai. Periksa koneksi internet, lalu coba lagi.';
+ }
+}
+function showReview(){let list=document.getElementById('reviewList');list.innerHTML='';questions.forEach((q,i)=>{let el=document.createElement('div');el.className='review';let yours=answers[i]===-1?'Belum dijawab':q.a[answers[i]];el.innerHTML=`<h4>${i+1}. ${q.q}</h4><p><b>Materi:</b> ${q.c}</p><p><b>Jawabanmu:</b> ${yours} ${answers[i]===q.k?'<span class="good">✓ Benar</span>':'<span class="bad">✗ Belum tepat</span>'}</p><p><b>Jawaban benar:</b> ${q.a[q.k]}</p><p><b>Pembahasan:</b> ${q.e}</p>`;list.appendChild(el)});document.getElementById('review').classList.remove('hidden');document.getElementById('review').scrollIntoView({behavior:'smooth',block:'start'})}
+function restartGame(){document.getElementById('result').classList.add('hidden');document.getElementById('start').classList.remove('hidden');document.getElementById('student').value=studentName;document.getElementById('className').value=className;window.scrollTo({top:0,behavior:'smooth'})}
+</script>
+</body>
+</html>
